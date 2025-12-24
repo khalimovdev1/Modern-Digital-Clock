@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: url("./img/background.jpg") no-repeat center/cover;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.container {
+  width: 800px;
+  height: 200px;
+  background-color: transparent;
+  backdrop-filter: blur(40px);
+  border: 2px solid red;
+  border-radius: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.container:hover {
+  cursor: pointer;
+  box-shadow: 0 0 22px red;
+  border-radius: 0 20px;
+  transform: scale(1.05);
+}
+
+.clock-wrapper {
+  display: flex;
+  gap: 60px;
+}
+
+.hours,
+.minutes,
+.seconds,
+.dots {
+  color: white;
+  font-size: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 0 0 10px red;
+  text-transform: uppercase;
+}
+
+#hour::after {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.82);
+  content: "Hours";
+}
+
+#minute::after {
+  content: "Mins";
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+#second::after {
+  content: "Sec";
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Responsive  */
+
+@media (max-width: 768px) {
+    .container {
+    width: 97%;
+    height: 30%;
+  }
+}
+
+@media (max-width: 567px) {
+  .container {
+    width: 95%;
+    height: 25%;
+  }
+
+  .clock-wrapper {
+    gap: 33px;
+  }
+
+  .hours,
+  .minutes,
+  .seconds,
+  .dots {
+    font-size: 55px;
+  }
+
+  #hour::after,
+  #minute::after,
+  #second::after {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 450px) {
+    .container {
+    width: 95%;
+    height: 20%;
+  }
+
+  .hours,
+  .minutes,
+  .seconds,
+  .dots {
+    font-size: 44px;
+  }
+
+  #hour::after,
+  #minute::after,
+  #second::after {
+    font-size: 10px;
+  }
+}
