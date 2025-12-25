@@ -105,10 +105,9 @@ body {
 
 @media (max-width: 450px) {
     .container {
-    width: 95%;
     height: 20%;
   }
-
+  
   .hours,
   .minutes,
   .seconds,
